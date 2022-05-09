@@ -11,6 +11,20 @@ for i in player.keys():
 
     while(True):
         print(f'{i} players turn.')
+        
+        if i == 'com':
+            for roll in range(rand.randrange(0,10)):
+                n = rand.randrange(1,7)
+                if n==1:
+                    player[i] = 0
+                    break
+                else:
+                    score += n
+            player[i] += score
+            print(f'yout turn is over. score {score} saved.')
+            break
+
+
         roll_or_stop = input('roll or stop >> ')
         if roll_or_stop == 'roll':
             n = rand.randrange(1,7)
@@ -18,6 +32,7 @@ for i in player.keys():
             if n==1:
                 print('you got number 1, so your score return to 0 and turn over')
                 player[i] = 0
+                break
             else:
                 score += n
                 print(f'total score in this turn: {score}')
@@ -25,3 +40,4 @@ for i in player.keys():
             player[i] += score
             print(f'your turn is over. score {score} saved.')
             break
+print(player)
