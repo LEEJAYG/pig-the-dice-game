@@ -23,7 +23,7 @@ while(True):
                     else:
                         score += n
                         player[i] += score
-                        if player[i] >= 100:
+                        if player[i] >= 150:
                             winner = i
                             break
                 print(f'yout turn is over. score {score} saved.')
@@ -42,7 +42,7 @@ while(True):
                     score += n
                     print(f'total score in this turn: {score}')
                     player[i] += score
-                    if player[i] >= 100:
+                    if player[i] >= 150:
                         winner = i
                         break
             else:
