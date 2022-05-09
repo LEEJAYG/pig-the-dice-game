@@ -2,16 +2,26 @@
 
 import random as rand
 
-num = int(input('플레이어 수: '))
+num = int(input('player num: '))
 player = {str(p):0 for p in range(1, num+1)}
 player['com'] = 0
 
 for i in player.keys():
+    score = 0
+
     while(True):
-        print(f'{i}번째 player님의 차례입니다.')
+        print(f'{i} players turn.')
         roll_or_stop = input('roll or stop >> ')
         if roll_or_stop == 'roll':
             n = rand.randrange(1,7)
-            print(f'숫자 {n}이 나왔습니다.')
+            print(f'your number is {n}')
+            if n==1:
+                print('you got number 1, so your score return to 0 and turn over')
+                player[i] = 0
+            else:
+                score += n
+                print(f'total score in this turn: {score}')
         else:
+            player[i] += score
+            print(f'your turn is over. score {score} saved.')
             break
