@@ -7,6 +7,15 @@ player = {str(p):0 for p in range(1, num+1)}
 player['com'] = 0
 winner = ''
 
+def roll():
+    n = rand.randrange(1,7)
+    print(f'your number is {n}')
+    return n
+
+def stop(i, score):
+    player[i] += score   
+    print(f'your turn is over. score {score} saved.')        
+
 while(True):
 
     for i in player.keys():
