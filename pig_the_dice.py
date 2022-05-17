@@ -14,7 +14,25 @@ def roll():
 
 def stop(i, score):
     player[i] += score   
-    print(f'your turn is over. score {score} saved.')        
+    print(f'your turn is over. score {score} saved.')
+    
+def winner(i):
+    if player[i] >= 50:
+        winner = i
+    return winner
+    
+def com_play():
+    for roll in range(rand.randrange(0,10)):
+        n = roll()
+        if n==1:
+            player[i] = 0
+            break
+        else:
+            score += n
+            player[i] += score
+            winner = winner()
+    print(f'your turn is over. score {score} saved.')
+
 
 while(True):
 
