@@ -44,7 +44,7 @@ while(True):
         while(True):
             print(f'{i} players turn.')
             if i == 'com':
-                for _ in range(rand.randrange(0,10)):
+                for _ in range(rand.randrange(0,5)):
                     n = roll()
                     if n==1:
                         print('you got number 1, so your score return to 0 and turn over')
