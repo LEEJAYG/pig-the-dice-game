@@ -37,6 +37,9 @@ while(True):
     
     for i in player.keys():
         score = 0
+        
+        if winner in player:
+            break
 
         while(True):
             print(f'{i} players turn.')
@@ -46,6 +49,7 @@ while(True):
                     if n==1:
                         print('you got number 1, so your score return to 0 and turn over')
                         player['com'] = 0
+                        score = 0
                         break
                     else:
                         score = calc_score(score, n)
@@ -58,6 +62,7 @@ while(True):
                 n = roll()
                 if n==1:
                     print('you got number 1, so your score return to 0 and turn over')
+                    score = 0
                     player[i] = 0
                     break
                 else: 
